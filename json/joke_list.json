@@ -1,0 +1,29 @@
+{
+    "0": {
+        "joke":"NONE",
+        "rating":0,
+        "author":"NONE",
+        "date":"NONE"
+    },
+
+    "1": {
+        "joke":"布団がふっとんだ",
+        "rating":0,
+        "author":"mine",
+        "date":"2025/04/25"
+    },
+
+    "2": {
+        "joke":"アルミ缶の上に，あるミカン！",
+        "rating":0,
+        "author":"mine",
+        "date":"2025/04/25"
+    },
+
+    "3": {
+        "joke":"おばちゃんが池の中に，おーバッチャン！",
+        "rating":0,
+        "author":"mine",
+        "date":"2025/04/25"
+    }
+}

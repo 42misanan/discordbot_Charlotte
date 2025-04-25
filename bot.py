@@ -1,24 +1,31 @@
 import interactions
-from interactions import utils
-
 import discord
+from discord.ext import commands
+from interactions import listen
+from interactions.api.events import Startup
+
 import config
 import json
 
-class Charlotte(interactions.Client):
-    #def reload():
-        #with open("json/joke_list.json", mode='r', encoding='UTF-8') as jsonfile:
-            #self.database = json.load(jsonfile)
-            #jsonfile.close
+def dbReload():
+    with open("json/joke_list.json", mode='r', encoding='UTF-8') as jsonfile:
+        db = json.load(jsonfile)
+        jsonfile.close
 
-    def wakeup(self):
-        super().wakeup(
-            command_prefix=utils.when_mentioned_or(config.PREFIX, './'),
+class Charlotte(interactions.Client):
+    def __init__(self):
+        super().__init__(
+            command_prefix=commands.when_mentioned_or(config.PREFIX, './'),
             help_command=None,
         )
-        self.slash = interactions.SlashCommand(self, sync_commands=True)
+        db = dbReload()
 
-    #async def on_startup(self): 
-        #print("==================\n \n CONSOLE: CLIENT is READY-TO-GO\n \n ==================")
-        #status = discord.CustomActivity("/joke ...?")
-        #await self.change_presence(activity=status)
+    @listen(Startup)
+    async def on_startup(self): 
+        activity=interactions.Activity(
+            name="/joke",
+            type=interactions.ActivityType.GAME
+            )
+        print(f" ==================\n \n CONSOLE: CLIENT is READY-TO-GO\n This bot is owned by {self.owner}\n \n ==================")
+        status = discord.CustomActivity("/joke ...?")
+        await self.change_presence(activity=status)
