@@ -6,11 +6,11 @@ bot = Charlotte()
 TOKEN = config.DISCORD_TOKEN
 
 extensions = [
-    #"cogs.admin",
-    #"cogs.check",
-    #"slash.vq",
-    #"slash.point",
-    #"slash.rank",
+    "slash.add",
+    "slash.help",
+    "slash.joke",
+    "slash.remove",
+    "slash.reload",
 ]
 for extension in extensions:
     bot.load_extension(extension)
