@@ -34,3 +34,5 @@
         5. NO_DATA!/ remove.py: 【管理者用】json/joke_list.jsonの中から何かしらのデータを削除する．
     - json:
         1. NO_DATA!/ joke_list.json: データを格納する．各データは「内容」「作成日」「作者」「評価」を持つ．
+    - sys:
+        1. NO_DATA!/ vote.py: vote システムをここに格納する． joke.pyで表示する出力結果に対して添える感じで使うことになりそう．
