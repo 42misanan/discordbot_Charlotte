@@ -27,10 +27,10 @@
 3. config.py: .envからTOKENとPREFIXを拾う．
 4. main.py: bot インスタンスを作成し，スラッシュコマンドを読み込み，botを立ち上げる．
     - slash:
-    1. NO_DATA!/ joke.py: このbotの中核となるコマンド．jsonファイルからアトランダムに吐き出す．
-    2. NO_DATA!/ add.py: ダジャレを追加する．「作成日」「作者」を取得し，「内容」を入力させる．
-    3. NO_DATA!/ help.py: 各コマンドから取得したdescriptionを出力させる．引数なしならコマンド一覧を表示．
-    4. NO_DATA!/ reload.py: 【管理者用】json/joke_list.jsonをリロードする．
-    5. NO_DATA!/ remove.py: 【管理者用】json/joke_list.jsonの中から何かしらのデータを削除する．
+        1. NO_DATA!/ joke.py: このbotの中核となるコマンド．jsonファイルからアトランダムに吐き出す．
+        2. NO_DATA!/ add.py: ダジャレを追加する．「作成日」「作者」を取得し，「内容」を入力させる．
+        3. NO_DATA!/ help.py: 各コマンドから取得したdescriptionを出力させる．引数なしならコマンド一覧を表示．
+        4. NO_DATA!/ reload.py: 【管理者用】json/joke_list.jsonをリロードする．
+        5. NO_DATA!/ remove.py: 【管理者用】json/joke_list.jsonの中から何かしらのデータを削除する．
     - json:
-    1. NO_DATA!/ joke_list.json: データを格納する．各データは「内容」「作成日」「作者」「評価」を持つ．
+        1. NO_DATA!/ joke_list.json: データを格納する．各データは「内容」「作成日」「作者」「評価」を持つ．
