@@ -23,7 +23,7 @@
 3. config.py: .envからTOKENとPREFIXを拾う．
 4. main.py: bot インスタンスを作成し，スラッシュコマンドを読み込み，botを立ち上げる．
     - slash:
-        1. NO_DATA!/ joke.py: このbotの中核となるコマンド．jsonファイルからアトランダムに吐き出す．
+        1. joke.py: このbotの中核となるコマンド．jsonファイルからアトランダムに吐き出す．
         2. NO_DATA!/ add.py: ダジャレを追加する．「作成日」「作者」を取得し，「内容」を入力させる．
         3. NO_DATA!/ help.py: 各コマンドから取得したdescriptionを出力させる．引数なしならコマンド一覧を表示．
         4. NO_DATA!/ reload.py: 【管理者用】json/joke_list.jsonをリロードする．
@@ -32,6 +32,7 @@
         1. NO_DATA!/ joke_list.json: データを格納する．各データは「内容」「作成日」「作者」「評価」を持つ．
     - sys:
         1. NO_DATA!/ vote.py: vote システムをここに格納する． joke.pyで表示する出力結果に対して添える感じで使うことになりそう．
+        2. dbLoader.py: jsonファイルを読み込んでグローバル変数化する．ここの処理は操作後には落ちるが，pythonの仕様上残るらしい．
 
 ## 納期
 特に決めない（気持ちがある時に作る） 

@@ -8,7 +8,7 @@ TOKEN = config.DISCORD_TOKEN
 extensions = [
     #"slash.add",
     #"slash.help",
-    #"slash.joke",
+    "slash.joke",
     #"slash.remove",
     #"slash.reload",
 ]
