@@ -22,10 +22,6 @@ class Charlotte(interactions.Client):
 
     @listen(Startup)
     async def on_startup(self): 
-        activity=interactions.Activity(
-            name="/joke",
-            type=interactions.ActivityType.GAME
-            )
         print(f" ==================\n \n CONSOLE: CLIENT is READY-TO-GO\n This bot is owned by {self.owner}\n \n ==================")
         status = discord.CustomActivity("/joke ...?")
         await self.change_presence(activity=status)
