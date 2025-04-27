@@ -22,5 +22,5 @@ class slashJoke(Extension):
         await ctx.send(f"**{joke}**\n"
                         "```\n"
 #                        f"評価:{rating}\n"
-                        f"登録:{date}\n"
+#                        f"登録:{date}\n"
                         "```")
