@@ -5,7 +5,7 @@ from interactions import listen
 from interactions.api.events import Startup
 
 import config
-import internal.loader
+from internal.loader import Loader
 
 class Charlotte(interactions.Client):
     def __init__(self):
@@ -22,8 +22,5 @@ class Charlotte(interactions.Client):
             f"bot 'Charlotte (Unofficial)' is owned by {self.owner}\n"
             "\n"
             "==================")
-        DATA = internal.loader.dbInitialize()
-        print("CONSOLE: database initialization successful")
-        print(DATA)
         status = discord.CustomActivity("/joke ...?")
         await self.change_presence(activity=status)
