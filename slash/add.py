@@ -36,5 +36,6 @@ class slashAdd(Extension):
         json_path = os.path.join(os.path.dirname(__file__), "../json/joke_list.json")
         with open(json_path, mode="w", encoding="utf-8") as jsonfile:
             json.dump(data, jsonfile, ensure_ascii=False, indent=4)
-        
+        #権限の濫用
+        print(f"CONSOLE: cmd /add called, 「{joke}」 added by {user}")
         await ctx.send(f"新しいダジャレを追加！\n`「{joke}」` by {user}")
