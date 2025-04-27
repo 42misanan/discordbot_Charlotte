@@ -1,4 +1,4 @@
-from interactions import Extension, slash_command, SlashContext, Option
+from interactions import Extension, slash_command, slash_option, OptionType, SlashContext
 from internal.loader import Loader
 import json
 import os
@@ -8,19 +8,23 @@ class slashAdd(Extension):
     @slash_command(
         name="add",
         description="新しいダジャレを……！？",
-        options=[
-            Option(name="joke", description="追加するダジャレ", type=str, required=True),
-        ],
+    )
+    @slash_option(
+            name="joke",
+            description="追加するダジャレ",
+            required=True,
+            opt_type=OptionType.STRING
     )
     async def add(self, ctx: SlashContext, joke: str):
         # データをロード
         data = Loader.get_data()
         # 新しいキーを生成（既存のキーの最大値 + 1）
         new_key = str(max(map(int, data.keys())) + 1) if data else "1"
-        author = ctx.author.display_name
+        user = ctx.author.display_name
+        author = ctx.author.id
         date = datetime.now().strftime("%Y/%m/%d")
 
-        # 一時的記憶
+        # 一時記憶
         data[new_key] = {
             "joke": joke,
             "rating": 0,
@@ -33,4 +37,4 @@ class slashAdd(Extension):
         with open(json_path, mode="w", encoding="utf-8") as jsonfile:
             json.dump(data, jsonfile, ensure_ascii=False, indent=4)
         
-        await ctx.send(f"新しいダジャレを追加！\n`「{joke}」` by {author}")
+        await ctx.send(f"新しいダジャレを追加！\n`「{joke}」` by {user}")
