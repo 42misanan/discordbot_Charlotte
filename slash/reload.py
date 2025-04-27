@@ -12,4 +12,5 @@ class slashReload(Extension):
             "ダジャレを記した手帳は不要……書き込む手間が惜しいわ。",
             "ダジャレは生活のエッセンスなの。派生するし、センスが問われるわ。"
         ]
-        await ctx.send(random.choices(response_list))
+        #新しいものがいいものとは限らない．動くなら，ローテクだっていい．
+        await ctx.send(response_list[random.randint(0, len(response_list)-1)])
