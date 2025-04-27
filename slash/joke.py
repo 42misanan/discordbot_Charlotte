@@ -19,7 +19,7 @@ class slashJoke(Extension):
         rating = (data[random_key].get("rating", "None"))
         date = (data[random_key].get("date", "None"))
         # ダジャレを送信
-        await ctx.send(f"# {joke}\n"
+        await ctx.send(f"{joke}\n"
                         "```\n"
                         f"評価:{rating}\n"
                         f"登録:{date}\n"
