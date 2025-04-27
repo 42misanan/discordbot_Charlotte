@@ -38,5 +38,4 @@
 特に決めない（気持ちがある時に作る） 
 
 ## クレジット（敬称略）
-- たぬざか (X:[@tanuzaka](https://x.com/tanuzaka)): botアイコン
-- Zect (X:[@Zect3279](https://x.com/Zect3279)): 参考コード提供
+botの方に書いた
