@@ -6,6 +6,7 @@ bot = Charlotte()
 TOKEN = config.DISCORD_TOKEN
 
 extensions = [
+    "slash.add",
     "slash.joke",
     "slash.reload"
 ]
