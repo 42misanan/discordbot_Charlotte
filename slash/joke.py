@@ -13,8 +13,14 @@ class slashJoke(Extension):
         if not keys:
             await ctx.send("ダジャレが……思いつかない……？そんなっ……！")
             return
-        #将来のためにrandom_keyは固定
+        #random_keyは一度出したら固定
         random_key = random.choice(keys)
         joke = (data[random_key].get("joke", "None"))
+        rating = (data[random_key].get("rating", "None"))
+        date = (data[random_key].get("date", "None"))
         # ダジャレを送信
-        await ctx.send(joke)
+        await ctx.send(f"# {joke}\n"
+                        "```\n"
+                        f"評価:{rating}\n"
+                        f"登録:{date}\n"
+                        "```")
